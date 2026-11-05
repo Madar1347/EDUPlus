@@ -96,6 +96,23 @@ footer{text-align:center;padding:35px;color:var(--muted);border-top:1px solid #2
 #courses .card:nth-child(4) .symbol {
   border-color: #9b7bff;
   box-shadow: 0 0 25px #9b7bff66;
+}@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+#courses .card .symbol {
+  animation: iconFloat 3s ease-in-out infinite,
+             digitalPulse 2.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+#courses .card:hover .symbol {
+  transform: translateY(-8px) scale(1.15);
 }</style>
 </head>
 <body>
