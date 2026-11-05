@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EDUPlus - Global multilingual online learning platform">
+<title>EDUPlus | Learn Without Limits</title>
+<style>
+:root{--bg:#081225;--panel:#101e35;--gold:#e9b957;--white:#f5f7fb;--muted:#a9b5c9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 7%;border-bottom:1px solid #24334b}
+.logo{font-size:27px;font-weight:bold;color:var(--gold)}
+nav a{color:white;text-decoration:none;margin:0 12px}
+select{padding:10px;border-radius:8px;background:#172640;color:white;border:1px solid #40506a}
+.hero{padding:90px 8%;text-align:center;background:radial-gradient(circle at top,#20395c,#081225 65%)}
+.hero h1{font-size:clamp(35px,6vw,62px);margin:10px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:var(--muted);font-size:18px;line-height:1.8}
+.btn{display:inline-block;padding:14px 25px;border-radius:9px;background:var(--gold);color:#101827;text-decoration:none;font-weight:bold;margin:12px 5px;border:0;cursor:pointer}
+.btn.secondary{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+section{padding:55px 8%}
+h2{text-align:center;font-size:30px}
+.sub{text-align:center;color:var(--muted);margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:var(--panel);padding:25px;border:1px solid #263954;border-radius:15px}
+.card .symbol{font-size:35px}
+.card h3{color:var(--gold)}
+.card p{color:var(--muted);line-height:1.7}
+.features{background:#0d1a30}
+footer{text-align:center;padding:35px;color:var(--muted);border-top:1px solid #263954}
+[dir=rtl] body{text-align:right}
+[dir=rtl] nav a{margin:0 8px}
+@media(max-width:650px){header{flex-wrap:wrap;gap:15px}nav{width:100%}.hero{padding:65px 6%}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">EDUPlus</div>
+<nav>
+<a href="#home" data-i="home">Home</a>
+<a href="#courses" data-i="courses">Courses</a>
+<a href="#about" data-i="about">About</a>
+</nav>
+<select id="language" aria-label="Choose language">
+<option value="en">English</option>
+<option value="fa">فارسی</option>
+<option value="ar">العربية</option>
+<option value="es">Español</option>
+<option value="fr">Français</option>
+<option value="de">Deutsch</option>
+<option value="tr">Türkçe</option>
+<option value="zh">中文</option>
+</select>
+</header>
+
+<main>
+<div class="hero" id="home">
+<p id="welcome">THE WORLD IS YOUR CLASSROOM</p>
+<h1 id="headline">Learn Without <span>Limits</span></h1>
+<p id="intro">Discover new skills, build your future and learn from anywhere in the world.</p>
+<a href="#courses" class="btn" id="explore">Explore Courses</a>
+<a href="#about" class="btn secondary" id="learnmore">Learn More</a>
+</div>
+
+<section id="courses">
+<h2 id="courseTitle">Popular Learning Paths</h2>
+<p class="sub" id="courseSub">Start learning skills that can shape your future.</p>
+<div class="grid">
+<div class="card"><div class="symbol">₿</div><h3 id="c1">Cryptocurrency Basics</h3><p id="p1">Understand blockchain, digital assets and crypto markets.</p></div>
+<div class="card"><div class="symbol">💻</div><h3 id="c2">Digital Skills</h3><p id="p2">Learn technology and practical digital skills.</p></div>
+<div class="card"><div class="symbol">📈</div><h3 id="c3">Financial Education</h3><p id="p3">Build your knowledge of markets and investing.</p></div>
+<div class="card"><div class="symbol">🌍</div><h3 id="c4">Languages</h3><p id="p4">Improve communication and learn new languages.</p></div>
+</div>
+</section>
+
+<section class="features" id="about">
+<h2 id="aboutTitle">Education Without Borders</h2>
+<p class="sub" id="aboutText">EDUPlus is designed to make learning accessible to people around the world.</p>
+<div class="grid">
+<div class="card"><div class="symbol">🌐</div><h3 id="f1">Multilingual</h3><p id="f1p">A learning experience designed for a global audience.</p></div>
+<div class="card"
