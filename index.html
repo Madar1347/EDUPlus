@@ -1,172 +1,502 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="EDUPlus - Global multilingual online learning platform">
+<meta name="theme-color" content="#10172a">
+<meta name="description" content="EDUPlus - International Online Learning Platform">
 <title>EDUPlus | Learn Without Limits</title>
+
 <style>
-:root{--bg:#081225;--panel:#101e35;--gold:#e9b957;--white:#f5f7fb;--muted:#a9b5c9}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,sans-serif}
-header{display:flex;justify-content:space-between;align-items:center;padding:22px 7%;border-bottom:1px solid #24334b}
-.logo{font-size:27px;font-weight:bold;color:var(--gold)}
-nav a{color:white;text-decoration:none;margin:0 12px}
-select{padding:10px;border-radius:8px;background:#172640;color:white;border:1px solid #40506a}
-.hero{padding:90px 8%;text-align:center;background:radial-gradient(circle at top,#20395c,#081225 65%)}
-.hero h1{font-size:clamp(35px,6vw,62px);margin:10px}
-.hero h1 span{color:var(--gold)}
-.hero p{color:var(--muted);font-size:18px;line-height:1.8}
-.btn{display:inline-block;padding:14px 25px;border-radius:9px;background:var(--gold);color:#101827;text-decoration:none;font-weight:bold;margin:12px 5px;border:0;cursor:pointer}
-.btn.secondary{background:transparent;border:1px solid var(--gold);color:var(--gold)}
-section{padding:55px 8%}
-h2{text-align:center;font-size:30px}
-.sub{text-align:center;color:var(--muted);margin-bottom:35px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:var(--panel);padding:25px;border:1px solid #263954;border-radius:15px}
-.card .symbol{
-  font-size:70px;
-  display:inline-block;
-  margin:10px 0 20px;
-  filter:drop-shadow(0 0 12px #00bfff);
-  animation: digitalPulse 2.5s ease-in-out infinite;
-  transition:transform .4s ease,filter .4s ease;
+:root {
+  --bg: #0b1120;
+  --surface: #151f33;
+  --primary: #6c63ff;
+  --accent: #20d6b5;
+  --text: #f5f7ff;
+  --muted: #a5b0c5;
 }
 
-.card:hover .symbol{
-  transform:scale(1.3) rotate(5deg);
-  filter:drop-shadow(0 0 25px #e9b957);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes digitalPulse{
-  0%,100%{
-    transform:scale(1);
-    filter:drop-shadow(0 0 8px #00bfff);
-  }
-  50%{
-    transform:scale(1.12);
-    filter:drop-shadow(0 0 24px #e9b957);
-  }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
-.card h3{color:var(--gold)}
-.card p{color:var(--muted);line-height:1.7}
-.features{background:#0d1a30}
-footer{text-align:center;padding:35px;color:var(--muted);border-top:1px solid #263954}
-[dir=rtl] body{text-align:right}
-[dir=rtl] nav a{margin:0 8px}
-@media(max-width:650px){header{flex-wrap:wrap;gap:15px}nav{width:100%}.hero{padding:65px 6%}}
-/* EDUPlus Neon Digital Icons */
 
-#courses .card .symbol {
-  width: 115px;
-  height: 115px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  border-bottom: 1px solid #ffffff20;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 10px auto 25px;
-  border-radius: 50%;
-  font-size: 68px;
-  background: radial-gradient(
-    circle,
-    #203e68 0%,
-    #10223d 65%,
-    #081225 100%
-  );
-  border: 2px solid rgba(80,180,255,.5);
-  box-shadow:
-    0 0 15px rgba(0,150,255,.4),
-    inset 0 0 20px rgba(0,150,255,.2);
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-#courses .card:nth-child(1) .symbol {
-  border-color: #f5a623;
-  box-shadow: 0 0 25px #f5a62366;
+a {
+  text-decoration: none;
+  color: var(--muted);
 }
 
-#courses .card:nth-child(2) .symbol {
-  border-color: #00d9ff;
-  box-shadow: 0 0 25px #00d9ff66;
+a:hover {
+  color: var(--accent);
 }
 
-#courses .card:nth-child(3) .symbol {
-  border-color: #00ff9d;
-  box-shadow: 0 0 25px #00ff9d66;
+button, select {
+  font: inherit;
 }
 
-#courses .card:nth-child(4) .symbol {
-  border-color: #9b7bff;
-  box-shadow: 0 0 25px #9b7bff66;
-}@keyframes iconFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+select {
+  background: var(--surface);
+  color: white;
+  border: 1px solid #ffffff30;
+  padding: 9px;
+  border-radius: 8px;
 }
 
-#courses .card .symbol {
-  animation: iconFloat 3s ease-in-out infinite,
-             digitalPulse 2.5s ease-in-out infinite;
-  transform-style: preserve-3d;
-}
-
-#courses .card:hover .symbol {
-  transform: translateY(-8px) scale(1.15);
-}#courses .card {
-  transition: transform .35s ease, box-shadow .35s ease;
+.btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 9px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-#courses .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 35px rgba(233,185,87,.25);
-  border-color: #e9b957;
-}</style>
+.btn:hover {
+  opacity: .85;
+}
+
+.hero {
+  padding: 100px 7%;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.hero-visual {
+  background: linear-gradient(145deg,#29245f,#123d4c);
+  min-height: 300px;
+  border-radius: 25px;
+  display: grid;
+  place-items: center;
+  font-size: 100px;
+}
+
+section {
+  padding: 65px 7%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+.features,
+.courses {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.card {
+  background: var(--surface);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #ffffff15;
+}
+
+.card .icon {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.course-price {
+  color: var(--accent);
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.cta {
+  text-align: center;
+  background: linear-gradient(120deg,#29245f,#123d4c);
+  border-radius: 22px;
+  margin: 40px 7%;
+  padding: 60px 20px;
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 35px;
+  border-top: 1px solid #ffffff20;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000b;
+  z-index: 10;
+  place-items: center;
+  padding: 20px;
+}
+
+.modal.active {
+  display: grid;
+}
+
+.modal-content {
+  background: var(--surface);
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 13px;
+  background: var(--bg);
+  border: 1px solid #ffffff30;
+  color: white;
+  border-radius: 8px;
+}
+
+.modal-content button {
+  margin-top: 12px;
+  width: 100%;
+}
+
+@media(max-width:800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 60px;
+  }
+
+  .features,
+  .courses {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
+
 <body>
+
 <header>
-<div class="logo">EDUPlus</div>
-<nav>
-<a href="#home" data-i="home">Home</a>
-<a href="#courses" data-i="courses">Courses</a>
-<a href="#about" data-i="about">About</a>
-</nav>
-<select id="language" aria-label="Choose language">
-<option value="en">English</option>
-<option value="fa">فارسی</option>
-<option value="ar">العربية</option>
-<option value="es">Español</option>
-<option value="fr">Français</option>
-<option value="de">Deutsch</option>
-<option value="tr">Türkçe</option>
-<option value="zh">中文</option>
-</select>
+  <div class="logo">EDU<span>Plus</span></div>
+
+  <nav>
+    <a href="#home" data-i18n="home">Home</a>
+    <a href="#courses" data-i18n="courses">Courses</a>
+    <a href="#features" data-i18n="features">Features</a>
+
+    <select id="language" aria-label="Language">
+      <option value="en">English</option>
+      <option value="fa">فارسی</option>
+      <option value="ar">العربية</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="de">Deutsch</option>
+      <option value="it">Italiano</option>
+      <option value="pt">Português</option>
+      <option value="ru">Русский</option>
+      <option value="zh">中文</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="tr">Türkçe</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ur">اردو</option>
+      <option value="id">Indonesia</option>
+      <option value="nl">Nederlands</option>
+      <option value="bn">বাংলা</option>
+      <option value="sw">Kiswahili</option>
+    </select>
+
+    <button class="btn" onclick="openLogin()" data-i18n="login">Login</button>
+  </nav>
 </header>
 
 <main>
+
 <div class="hero" id="home">
-<p id="welcome">THE WORLD IS YOUR CLASSROOM</p>
-<h1 id="headline">Learn Without <span>Limits</span></h1>
-<p id="intro">Discover new skills, build your future and learn from anywhere in the world.</p>
-<a href="#courses" class="btn" id="explore">Explore Courses</a>
-<a href="#about" class="btn secondary" id="learnmore">Learn More</a>
+  <div>
+    <h1 data-i18n="headline">
+      Learn Without Limits
+    </h1>
+
+    <p data-i18n="description">
+      Discover new skills, learn from expert instructors,
+      and build a better future with EDUPlus.
+    </p>
+
+    <button class="btn"
+      onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})"
+      data-i18n="explore">
+      Explore Courses
+    </button>
+  </div>
+
+  <div class="hero-visual">🎓🌍</div>
 </div>
 
-<section id="courses">
-<h2 id="courseTitle">Popular Learning Paths</h2>
-<p class="sub" id="courseSub">Start learning skills that can shape your future.</p>
-<div class="grid">
-<div class="card"><div class="symbol">₿</div><h3 id="c1">Cryptocurrency Basics</h3><p id="p1">Understand blockchain, digital assets and crypto markets.</p></div>
-<div class="card"><div class="symbol">💻</div><h3 id="c2">Digital Skills</h3><p id="p2">Learn technology and practical digital skills.</p></div>
-<div class="card"><div class="symbol">📈</div><h3 id="c3">Financial Education</h3><p id="p3">Build your knowledge of markets and investing.</p></div>
-<div class="card"><div class="symbol">🌍</div><h3 id="c4">Languages</h3><p id="p4">Improve communication and learn new languages.</p></div>
-</div>
+<section id="features">
+  <h2 class="section-title" data-i18n="why">Why EDUPlus?</h2>
+  <p class="section-subtitle" data-i18n="whyDesc">
+    Education without boundaries.
+  </p>
+
+  <div class="features">
+
+    <div class="card">
+      <div class="icon">🌎</div>
+      <h3 data-i18n="global">Global Learning</h3>
+      <p data-i18n="globalDesc">
+        Learn from anywhere in the world.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">👨‍🏫</div>
+      <h3 data-i18n="experts">Expert Teachers</h3>
+      <p data-i18n="expertsDesc">
+        Learn from experienced instructors.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏆</div>
+      <h3 data-i18n="certificates">Certificates</h3>
+      <p data-i18n="certDesc">
+        Showcase your learning achievements.
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<section class="features" id="about">
-<h2 id="aboutTitle">Education Without Borders</h2>
-<p class="sub" id="aboutText">EDUPlus is designed to make learning accessible to people around the world.</p>
-<div class="grid">
-<div class="card"><div class="symbol">🌐</div><h3 id="f1">Multilingual</h3><p id="f1p">A learning experience designed for a global audience.</p></div>
-<div class="card"
+<section id="courses">
+  <h2 class="section-title" data-i18n="popular">
+    Popular Courses
+  </h2>
+
+  <p class="section-subtitle" data-i18n="popularDesc">
+    Start learning something new today.
+  </p>
+
+  <div class="courses">
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>Web Development</h3>
+      <p>Learn HTML, CSS and JavaScript.</p>
+      <div class="course-price">Coming Soon</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Data Science</h3>
+      <p>Explore data analysis and modern AI.</p>
+      <div class="course-price">Coming Soon</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🗣️</div>
+      <h3>Language Learning</h3>
+      <p>Improve your communication skills.</p>
+      <div class="course-price">Coming Soon</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="cta">
+  <h2 data-i18n="join">Your Future Starts Here</h2>
+  <p data-i18n="joinDesc">
+    Join the EDUPlus learning community.
+  </p>
+
+  <br>
+
+  <button class="btn" onclick="openLogin()" data-i18n="register">
+    Get Started
+  </button>
+</div>
+
+</main>
+
+<footer>
+  © 2026 EDUPlus. All rights reserved.
+</footer>
+
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+
+    <h2 data-i18n="welcome">Welcome to EDUPlus</h2>
+
+    <input type="email" placeholder="Email address">
+    <input type="password" placeholder="Password">
+
+    <button class="btn" onclick="alert('Authentication backend is not connected yet.')">
+      Login
+    </button>
+
+    <button class="btn"
+      style="background:#39445b"
+      onclick="closeLogin()">
+      Close
+    </button>
+
+  </div>
+</div>
+
+<script>
+const translations = {
+  en: {
+    home:"Home",
+    courses:"Courses",
+    features:"Features",
+    login:"Login",
+    headline:"Learn Without Limits",
+    description:"Discover new skills, learn from expert instructors, and build a better future with EDUPlus.",
+    explore:"Explore Courses",
+    why:"Why EDUPlus?",
+    whyDesc:"Education without boundaries.",
+    global:"Global Learning",
+    globalDesc:"Learn from anywhere in the world.",
+    experts:"Expert Teachers",
+    expertsDesc:"Learn from experienced instructors.",
+    certificates:"Certificates",
+    certDesc:"Showcase your learning achievements.",
+    popular:"Popular Courses",
+    popularDesc:"Start learning something new today.",
+    join:"Your Future Starts Here",
+    joinDesc:"Join the EDUPlus learning community.",
+    register:"Get Started",
+    welcome:"Welcome to EDUPlus"
+  },
+
+  fa: {
+    home:"خانه",
+    courses:"دوره‌ها",
+    features:"امکانات",
+    login:"ورود",
+    headline:"بدون محدودیت یاد بگیر",
+    description:"مهارت‌های جدید بیاموز، از استادان حرفه‌ای یاد بگیر و آینده بهتری بساز.",
+    explore:"مشاهده دوره‌ها",
+    why:"چرا EDUPlus؟",
+    whyDesc:"آموزش بدون مرز.",
+    global:"آموزش جهانی",
+    globalDesc:"از هر نقطه جهان یاد بگیر.",
+    experts:"استادان متخصص",
+    expertsDesc:"از مدرسان باتجربه بیاموز.",
+    certificates:"گواهینامه",
+    certDesc:"دستاوردهای آموزشی خود را نمایش بده.",
+    popular:"دوره‌های محبوب",
+    popularDesc:"امروز یادگیری را شروع کن.",
+    join:"آینده تو از اینجا شروع می‌شود",
+    joinDesc:"به جامعه آموزشی EDUPlus بپیوند.",
+    register:"شروع کن",
+    welcome:"به EDUPlus خوش آمدی"
+  }
+};
+
+const language = document.getElementById("language");
+
+function setLanguage(lang) {
+  const t = translations[lang] || translations.en;
+
+  document.documentElement.lang = lang;
+
+  document.documentElement.dir =
+    ["fa","ar","ur"].includes(lang) ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key]) el.textContent = t[key];
+  });
+
+  document.body.style.fontFamily =
+    lang === "fa" ? "Tahoma, Arial, sans-serif" : "Arial, sans-serif";
+}
+
+language.addEventListener("change", event => {
+  setLanguage(event.target.value);
+});
+
+function openLogin() {
+  document.getElementById("loginModal").classList.add("active");
+}
+
+function closeLogin() {
+  document.getElementById("loginModal").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
